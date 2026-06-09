@@ -1,4 +1,9 @@
 console.log("Hello world!");
 //link to the HTML page for the outputs
 const MENU_OUTPUT = document.getElementById("menuOutput");
+const ORDER_FORM_OUTPUT = document.getElementById("orderFormOutput");
 
+//store menu items in an object
+const menuItems{
+    
+}
