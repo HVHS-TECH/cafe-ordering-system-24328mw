@@ -11,6 +11,10 @@ const menuItems = [
     },
     {
         name: "deconstructed cake",
-        price 
+        price: 20
+    },
+    {
+        name: "aged milk milkshake",
+        price: 27
     }
 ]
