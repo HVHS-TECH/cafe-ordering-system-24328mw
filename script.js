@@ -6,7 +6,11 @@ const ORDER_FORM_OUTPUT = document.getElementById("orderFormOutput");
 //store menu items in an object
 const menuItems = [
     {
-        name: "evaporated water"
+        name: "evaporated water",
         price: 15
+    },
+    {
+        name: "deconstructed cake",
+        price 
     }
 ]
