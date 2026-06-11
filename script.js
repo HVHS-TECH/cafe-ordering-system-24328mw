@@ -8,9 +8,7 @@ const menuItems = [
     {
         name: "evaporated water",
         price: 15,
-        image: {
-            src: "evaporatedWater.png"
-        }
+        imageSrc: "evaporatedWater.png"
     },
     {
         name: "deconstructed cake",
@@ -22,6 +20,9 @@ const menuItems = [
     }
 ]
 //use a function to display the menu items
-function displayMenuItem()
-
-MENU_OUTPUT.innerHTML = "<img src="+menuItems[0].image.src+" alt="+menuItems[0].name+" width=200>"
+function displayMenuItem(_name, _price, _imageSrc){
+    MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=200><br>"
+    MENU_OUTPUT.innerHTML += "<p>"+_name+"</p>"
+}
+displayMenuItem(menuItems[0].name, menuItems[0].price, me)
+MENU_OUTPUT.innerHTML = "<img src="+menuItems[0].imageSrc+" alt="+menuItems[0].name+" width=200>"
