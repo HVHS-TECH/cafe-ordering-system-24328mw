@@ -7,7 +7,10 @@ const ORDER_FORM_OUTPUT = document.getElementById("orderFormOutput");
 const menuItems = [
     {
         name: "evaporated water",
-        price: 15
+        price: 15,
+        image: {
+            src: 
+        }
     },
     {
         name: "deconstructed cake",
