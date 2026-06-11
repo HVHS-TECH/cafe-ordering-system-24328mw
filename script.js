@@ -21,4 +21,4 @@ const menuItems = [
         price: 27
     }
 ]
-MENU_OUTPUT.innerHTML = "<img src=menuItems[0].image.src>"
+MENU_OUTPUT.innerHTML = "<img src=menuItems[0].image.src alt = mane>"
