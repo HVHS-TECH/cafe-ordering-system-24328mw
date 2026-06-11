@@ -21,5 +21,7 @@ const menuItems = [
         price: 27
     }
 ]
-//use a function 
+//use a function to display the menu items
+function displayMenuItem()
+
 MENU_OUTPUT.innerHTML = "<img src="+menuItems[0].image.src+" alt="+menuItems[0].name+" width=200>"
