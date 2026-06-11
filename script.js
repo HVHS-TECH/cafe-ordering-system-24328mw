@@ -9,7 +9,7 @@ const menuItems = [
         name: "evaporated water",
         price: 15,
         image: {
-            src: 
+            src: "evaporatedWater.png"
         }
     },
     {
@@ -21,4 +21,4 @@ const menuItems = [
         price: 27
     }
 ]
-
+MENU_OUTPUT.innerHTML = ""
