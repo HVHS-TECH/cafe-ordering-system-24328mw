@@ -8,9 +8,6 @@ const menuItems = [
     {
         name: "evaporated water",
         price: 15,
-        image: {
-            src: "evaporatedWater.png"
-        }
     },
     {
         name: "deconstructed cake",
@@ -21,4 +18,4 @@ const menuItems = [
         price: 27
     }
 ]
-MENU_OUTPUT.innerHTML = ""
+MENU_OUTPUT.innerHTML = "<p>"+menuItems[0].name+"</p>"
