@@ -21,4 +21,5 @@ const menuItems = [
         price: 27
     }
 ]
+
 MENU_OUTPUT.innerHTML = "<img src="+menuItems[0].image.src+" alt="+menuItems[0].name+" width=200>"
