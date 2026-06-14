@@ -6,7 +6,7 @@ const ORDER_FORM_OUTPUT = document.getElementById("orderFormOutput");
 //store menu items in an object
 const menuItems = [
     {
-        name: "evaporated water",
+        name: "Evaporated Water",
         price: 15,
         imageSrc: "evaporatedWater.png"
     },
@@ -21,8 +21,9 @@ const menuItems = [
 ]
 //use a function to display the menu items
 function displayMenuItem(_name, _price, _imageSrc){
-    MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=50><br><br><br>"
+    MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=150>"
+    MENU_OUTPUT.innerHTML += "<p>"+_name+"</p>"
 }
-displayMenuItem(menuItems[0].name, menuItems[0].price, menuItems[0].imageSrc)
-MENU_OUTPUT.innerHTML = "<img src="+menuItems[0].imageSrc+" alt="+menuItems[0].name+" width=200>"
- MENU_OUTPUT.innerHTML += "<img src="+evaporatedWater.png+" alt=manj width=50><br><br><br>"
+for (let i=0; i<menuItems.length; i++){
+    displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc)
+}
