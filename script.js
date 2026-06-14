@@ -21,8 +21,8 @@ const menuItems = [
 ]
 //use a function to display the menu items
 function displayMenuItem(_name, _price, _imageSrc){
-    MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=200><br>"
-    MENU_OUTPUT.innerHTML += "<p>"+_name+"</p>"
+    MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=200><br><br><br>"
+    MENU_OUTPUT.innerHTML += "<p>hfjhjf</p>"
 }
 displayMenuItem(menuItems[0].name, menuItems[0].price, menuItems[0].imageSrc)
 MENU_OUTPUT.innerHTML = "<img src="+menuItems[0].imageSrc+" alt="+menuItems[0].name+" width=200>"
