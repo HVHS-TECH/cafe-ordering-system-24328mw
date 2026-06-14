@@ -24,7 +24,10 @@ function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=150>"
     MENU_OUTPUT.innerHTML += "<p>"+_name+"</p>"
 }
-
+//function to open the order form
+function openOrder(){
+    
+}
 //use a for loop to display full menu
 for (let i=0; i<menuItems.length; i++){
     displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc)
