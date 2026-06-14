@@ -26,7 +26,7 @@ function displayMenuItem(_name, _price, _imageSrc){
 }
 //function to open the order form
 function openOrder(){
-    ORDER_FORM_OUTPUT.innerHTML = "<form></form>"
+    ORDER_FORM_OUTPUT.innerHTML = "<form id ></form>"
 }
 //use a for loop to display full menu
 for (let i=0; i<menuItems.length; i++){
