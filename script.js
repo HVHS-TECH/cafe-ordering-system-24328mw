@@ -46,7 +46,8 @@ for (let i=0; i<menuItems.length; i++){
 
 
 function getNameFormInput(){
-    
+    const NAME_FIELD = document.getElementById("nameField");
+    USER.name = NAME_FIELD.value;
 }
 function getItemFormInput(){
 }
