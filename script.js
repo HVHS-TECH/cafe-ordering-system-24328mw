@@ -18,6 +18,7 @@ const menuItems = [
         price: 27
     }
 ]
+const user
 //add an array for the user's order
 let cartArray = []
 //use a function to display the menu items
@@ -44,7 +45,7 @@ for (let i=0; i<menuItems.length; i++){
 
 
 function getNameFormInput(){
-    
+
 }
 function getItemFormInput(){
 }
