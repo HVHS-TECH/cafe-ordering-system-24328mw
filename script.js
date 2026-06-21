@@ -18,9 +18,10 @@ const menuItems = [
         price: 27
     }
 ]
-const user
+//make an object to hold user information
+const USER = {};
 //add an array for the user's order
-let cartArray = []
+let cartArray = [];
 //use a function to display the menu items
 function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=150>";
@@ -45,7 +46,7 @@ for (let i=0; i<menuItems.length; i++){
 
 
 function getNameFormInput(){
-
+    
 }
 function getItemFormInput(){
 }
