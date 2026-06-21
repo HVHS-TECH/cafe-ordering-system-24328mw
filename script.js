@@ -44,6 +44,7 @@ for (let i=0; i<menuItems.length; i++){
 
 
 function getNameFormInput(){
+    
 }
 function getItemFormInput(){
 }
