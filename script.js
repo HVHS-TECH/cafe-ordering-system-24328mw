@@ -53,5 +53,5 @@ function getNameFormInput(){
     USER.name = NAME_FIELD.value;
 }
 function getItemFormInput(){
-
+    
 }
