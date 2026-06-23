@@ -35,7 +35,7 @@ function openOrder(){
     NAME_FORM_OUTPUT.innerHTML = "<h4>Name:</h4>";
     NAME_FORM_OUTPUT.innerHTML += "<form id=nameForm onsubmit='return false'><input id=nameField type=text required><input type=submit onclick=getNameFormInput()></form>";
     ITEM_FORM_OUTPUT.innerHTML += "<h4>Add an item to your cart:</h4>";
-    ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'><input id=evaporatedWater type=radio name=menuOption value=water><label for=water>Evaporated water</label><br><input id=deconstructedCake type=radio name=menuOption value=cake><label for=cake>Deconstruced cake</label><br><input id=agedMilkMilkshake type=radio name=menuOption value=milkshake><label for=milkshake>Aged milk milkshake</label><br><input type=submit onclick=getItemFormInput></form>";
+    ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'><input id=evaporatedWater type=radio name=menuOption value=water><label for=water>Evaporated water</label><br><input id=deconstructedCake type=radio name=menuOption value=cake><label for=cake>Deconstruced cake</label><br><input id=agedMilkMilkshake type=radio name=menuOption value=milkshake><label for=milkshake>Aged milk milkshake</label><br><input type=submit onclick=getItemFormInput()></form>";
     CART_OUTPUT.innerHTML += "<h4>Your Cart:</h4>";
     for (let i=0; i<cartArray.length; i++){
         CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
