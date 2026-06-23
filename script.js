@@ -54,6 +54,6 @@ function getNameFormInput(){
 }
 function getItemFormInput(){
     if (document.getElementById("evaporatedWater").checked){
-        
+        console.log("frger")
     }
 }
