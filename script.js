@@ -53,5 +53,7 @@ function getNameFormInput(){
     USER.name = NAME_FIELD.value;
 }
 function getItemFormInput(){
-    
+    if (document.getElementById("evaporatedWater").checked){
+        
+    }
 }
