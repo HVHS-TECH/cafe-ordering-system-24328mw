@@ -53,6 +53,7 @@ function getNameFormInput(){
     USER.name = NAME_FIELD.value;
 }
 function getItemFormInput(){
+    console.log("thgergreg")
     if (document.getElementById("evaporatedWater").checked){
         console.log("frger")
     }
