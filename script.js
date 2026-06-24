@@ -5,6 +5,7 @@ const NAME_FORM_OUTPUT = document.getElementById("nameFormOutput");
 const ITEM_FORM_OUTPUT = document.getElementById("itemFormOutput");
 const CART_OUTPUT = document.getElementById("cartOutput");
 const ORDER_BUTTON_OUTPUT = document.getElementById("orderButtonOutput");
+const MONEY_FORM_OUTPUT = document.getElementById("moneyFormOutput");
 //store menu items in an object
 const menuItems = [
     {
@@ -44,11 +45,12 @@ for (let i=0; i<menuItems.length; i++){
     displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc);
 }
 
-
+//recieve username information from form
 function getNameFormInput(){
     const NAME_FIELD = document.getElementById("nameField");
     USER.name = NAME_FIELD.value;
 }
+
 function getItemFormInput(){
     if (document.getElementById("evaporatedWater").checked){
         cartArray.push(0);
