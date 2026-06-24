@@ -69,15 +69,10 @@ function getItemFormInput(){
     }
     //display updated cart
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
-    if (cartArray.length==0){
-        CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
+    for (let i=0; i<cartArray.length; i++){
+        CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
     }
-    else{
-        for (let i=0; i<cartArray.length; i++){
-            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
-        }
-        CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>";
-    }
+    CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
 }
 //recieve and store user money information
 function getMoneyFormInput(){
@@ -85,8 +80,7 @@ function getMoneyFormInput(){
     USER.money = MONEY_FIELD.value;
 }
 function clearCart(){
-    CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
-    CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
+
 }
 function placeOrder(){
 
