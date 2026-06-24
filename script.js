@@ -73,5 +73,6 @@ function getItemFormInput(){
     }
 }
 function getMoneyFormInput(){
-    
+    const MONEY_FIELD = document.getElementById("moneyField");
+    USER.money = MONEY_FIELD.value;
 }
