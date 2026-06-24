@@ -50,7 +50,7 @@ function getNameFormInput(){
     const NAME_FIELD = document.getElementById("nameField");
     USER.name = NAME_FIELD.value;
 }
-
+//recieve item choice information
 function getItemFormInput(){
     if (document.getElementById("evaporatedWater").checked){
         cartArray.push(0);
@@ -64,6 +64,7 @@ function getItemFormInput(){
     else{
         console.log("no item selected");
     }
+    //display updated cart
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
     for (let i=0; i<cartArray.length; i++){
         CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
