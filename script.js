@@ -38,16 +38,17 @@ function openOrder(){
     ITEM_FORM_OUTPUT.innerHTML += "<h4>Add an item to your cart:</h4>";
     ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'><input id=evaporatedWater type=radio name=menuOption value=water><label for=water>Evaporated water</label><br><input id=deconstructedCake type=radio name=menuOption value=cake><label for=cake>Deconstruced cake</label><br><input id=agedMilkMilkshake type=radio name=menuOption value=milkshake><label for=milkshake>Aged milk milkshake</label><br><input type=submit onclick=getItemFormInput()></form>";
     CART_OUTPUT.innerHTML += "<h4>Your Cart:</h4>";
-    MONEY_FORM_OUTPUT.innerHTML += "<h4>Please enter your money</h4>"
+    CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>"
+    MONEY_FORM_OUTPUT.innerHTML += "<h4>Please enter your money</h4>";
     MONEY_FORM_OUTPUT.innerHTML += "<form id=nameForm onsubmit='return false'><label for=moneyField>$</label><input id=nameField type=number required><input type=submit onclick=getMoneyFormInput()></form>";
-    ORDER_BUTTON_OUTPUT.innerHTML += "<button onclick=placeOrder>Place Order</button>"
+    ORDER_BUTTON_OUTPUT.innerHTML += "<button onclick=placeOrder()>Place Order</button>";
 }
 //use a for loop to display full menu
 for (let i=0; i<menuItems.length; i++){
     displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc);
 }
 
-//recieve username information from form
+//recieve and store username information from form
 function getNameFormInput(){
     const NAME_FIELD = document.getElementById("nameField");
     USER.name = NAME_FIELD.value;
@@ -71,8 +72,16 @@ function getItemFormInput(){
     for (let i=0; i<cartArray.length; i++){
         CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
     }
+    CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
 }
+//recieve and store user money information
 function getMoneyFormInput(){
     const MONEY_FIELD = document.getElementById("moneyField");
     USER.money = MONEY_FIELD.value;
+}
+function clearCart(){
+
+}
+function placeOrder(){
+
 }
