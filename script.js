@@ -61,7 +61,7 @@ function getItemFormInput(){
     else if (document.getElementById("deconstructedCake").checked){
         cartArray.push(1);
     }
-    else if (document.getElementById("agedMilkMilk").checked){
+    else if (document.getElementById("agedMilkMilkshake").checked){
         cartArray.push(2);
     }
     else{
@@ -69,10 +69,15 @@ function getItemFormInput(){
     }
     //display updated cart
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
-    for (let i=0; i<cartArray.length; i++){
-        CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
+    if (cartArray.length<1){
+        CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     }
-    CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
+    else{
+        for (let i=0; i<cartArray.length; i++){
+            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
+        }
+        CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
+    }
 }
 //recieve and store user money information
 function getMoneyFormInput(){
@@ -80,7 +85,8 @@ function getMoneyFormInput(){
     USER.money = MONEY_FIELD.value;
 }
 function clearCart(){
-
+    CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
+    CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
 }
 function placeOrder(){
 
