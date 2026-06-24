@@ -6,6 +6,7 @@ const ITEM_FORM_OUTPUT = document.getElementById("itemFormOutput");
 const CART_OUTPUT = document.getElementById("cartOutput");
 const ORDER_BUTTON_OUTPUT = document.getElementById("orderButtonOutput");
 const MONEY_FORM_OUTPUT = document.getElementById("moneyFormOutput");
+const FULL_PAGE_OUTPUT = document.getElementById("fullPageOutput");
 //store menu items in an object
 const menuItems = [
     {
@@ -89,5 +90,7 @@ function clearCart(){
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
 }
 function placeOrder(){
-
+    FULL_PAGE_OUTPUT.innerHTML = "<p>Your name is "+USER.name+"</p>"
+    FULL_PAGE_OUTPUT.innerHTML += "<p>You have $"+USER.money+" to pay with</p>"
+    FULL_PAGE_OUTPUT.innerHTML += "<button onclick=continueOrder>Confirm<"
 }
