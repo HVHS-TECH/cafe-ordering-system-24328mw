@@ -134,7 +134,7 @@ function completeOrder(){
     }
     else{
         FULL_PAGE_OUTPUT.innerHTML = "<h4>Name: "+USER.name+"</h4>"
-        FULL_PAGE_OUTPUT.innerHTML += "<h4>Order</h4>"
+        FULL_PAGE_OUTPUT.innerHTML += "<h4>Order:</h4>"
         for (let i=0; i<cartArray.length; i++){
             FULL_PAGE_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" $"+menuItems[cartArray[i]].price+"</p>";
         }
