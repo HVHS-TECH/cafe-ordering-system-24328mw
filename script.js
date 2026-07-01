@@ -27,16 +27,17 @@ const menuItems = [
 const USER = {};
 //add an array for the user's order
 let cartArray = [];
+let change;
 //use a function to display the menu items
 function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=150>";
     MENU_OUTPUT.innerHTML += "<p>"+_name+": $"+_price+"</p>";
 }
-function calculateChange(){
+function calculateChange(_money){
     for (let i=0; i<cartArray.length; i++){
-        USER.money = USER.money - menuItems[cartArray[i]].price;
+        _money = _money - menuItems[cartArray[i]].price;
     }
-    return ca
+    return _money;
 }
 //function to open the order form
 function openOrder(){
@@ -124,8 +125,8 @@ function continueOrder(){
     FULL_PAGE_OUTPUT.innerHTML += "<button onclick=completeOrder>Confirm</button>";
 }
 function completeOrder(){
-    
-    if (USER.money<0){
+    change = calculateChange(USER.money)
+    if (change<0){
         FULL_PAGE_OUTPUT.innerHTML = "<p>You can't afford this</p>"
     }
     else{
@@ -134,6 +135,7 @@ function completeOrder(){
         for (let i=0; i<cartArray.length; i++){
             FULL_PAGE_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" $"+menuItems[cartArray[i]].price+"</p>";
         }
-        FULL_PAGE_OUTPUT.innerHTML += "<p>You paid</p>"
+        FULL_PAGE_OUTPUT.innerHTML += "<h4>Total cost</h4>"
+        FULL_PAGE_OUTPUT.innerHTML += "<p>You paid "+USER.money+"</p>"
     }
 }
