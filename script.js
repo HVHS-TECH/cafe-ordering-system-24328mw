@@ -124,4 +124,7 @@ function completeOrder(){
     if (USER.money<0){
         FULL_PAGE_OUTPUT.innerHTML = "<p>You can't afford this</p>"
     }
+    else{
+        
+    }
 }
