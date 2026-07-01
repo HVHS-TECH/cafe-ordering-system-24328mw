@@ -30,7 +30,7 @@ let cartArray = [];
 //use a function to display the menu items
 function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=150>";
-    MENU_OUTPUT.innerHTML += "<p>"+_name+"</p>";
+    MENU_OUTPUT.innerHTML += "<p>"+_name+": $"+_price+"</p>";
 }
 //function to open the order form
 function openOrder(){
@@ -40,8 +40,8 @@ function openOrder(){
     ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'><input id=evaporatedWater type=radio name=menuOption value=water><label for=water>Evaporated water</label><br><input id=deconstructedCake type=radio name=menuOption value=cake><label for=cake>Deconstruced cake</label><br><input id=agedMilkMilkshake type=radio name=menuOption value=milkshake><label for=milkshake>Aged milk milkshake</label><br><input type=submit onclick=getItemFormInput()></form>";
     CART_OUTPUT.innerHTML += "<h4>Your Cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
-    MONEY_FORM_OUTPUT.innerHTML += "<h4>Please enter your money</h4>";
-    MONEY_FORM_OUTPUT.innerHTML += "<form id=nameForm onsubmit='return false'><label for=moneyField>$</label><input id=nameField type=number required><input type=submit onclick=getMoneyFormInput()></form>";
+    MONEY_FORM_OUTPUT.innerHTML += "<h4>Enter your money:</h4>";
+    MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number required><input type=submit onclick=getMoneyFormInput()></form>";
     ORDER_BUTTON_OUTPUT.innerHTML += "<button onclick=placeOrder()>Place Order</button>";
 }
 //use a for loop to display full menu
@@ -84,13 +84,44 @@ function getItemFormInput(){
 function getMoneyFormInput(){
     const MONEY_FIELD = document.getElementById("moneyField");
     USER.money = MONEY_FIELD.value;
+    console.log(USER.money);
 }
 function clearCart(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
+    cartArray = [];
 }
 function placeOrder(){
-    FULL_PAGE_OUTPUT.innerHTML = "<p>Your name is "+USER.name+"</p>"
-    FULL_PAGE_OUTPUT.innerHTML += "<p>You have $"+USER.money+" to pay with</p>"
-    FULL_PAGE_OUTPUT.innerHTML += "<button onclick=continueOrder>Confirm<"
+    const NAME_FORM = document.getElementById("nameForm");
+    const MONEY_FORM = document.getElementById("moneyForm");
+    if (!NAME_FORM.checkValidity()){
+        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Please enter a name</p>";
+    }
+    
+    else if (!MONEY_FORM.checkValidity()){
+        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Please enter your money</p>";
+    }
+    else if (cartArray.length == 0){
+        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Add an item to you cart</p>";
+    }
+    else{
+        FULL_PAGE_OUTPUT.innerHTML = "<p>Your name is "+USER.name+"</p>";
+        FULL_PAGE_OUTPUT.innerHTML += "<p>You have $"+USER.money+" to pay with</p>";
+        FULL_PAGE_OUTPUT.innerHTML += "<button onclick=continueOrder()>Confirm</button>";
+    }
+}
+function continueOrder(){
+    FULL_PAGE_OUTPUT.innerHTML = "<h4>Your order:</h4>";
+    for (let i=0; i<cartArray.length; i++){
+        FULL_PAGE_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" $"+menuItems[cartArray[i]].price+"</p>";
+    }
+    FULL_PAGE_OUTPUT.innerHTML += "<button onclick=completeOrder>Confirm</button>";
+}
+function completeOrder(){
+    for (let i=0; i<cartArray.length; i++){
+        USER.money = USER.money - menuItems[cartArray[i]].price;
+    }
+    if (USER.money<0){
+        FULL_PAGE_OUTPUT.innerHTML = "<p>You can't afford this</p>"
+    }
 }
