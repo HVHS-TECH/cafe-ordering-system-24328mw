@@ -32,6 +32,12 @@ function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=150>";
     MENU_OUTPUT.innerHTML += "<p>"+_name+": $"+_price+"</p>";
 }
+function calculateChange(){
+    for (let i=0; i<cartArray.length; i++){
+        USER.money = USER.money - menuItems[cartArray[i]].price;
+    }
+    return ca
+}
 //function to open the order form
 function openOrder(){
     NAME_FORM_OUTPUT.innerHTML = "<h4>Name:</h4>";
@@ -118,9 +124,7 @@ function continueOrder(){
     FULL_PAGE_OUTPUT.innerHTML += "<button onclick=completeOrder>Confirm</button>";
 }
 function completeOrder(){
-    for (let i=0; i<cartArray.length; i++){
-        USER.money = USER.money - menuItems[cartArray[i]].price;
-    }
+    
     if (USER.money<0){
         FULL_PAGE_OUTPUT.innerHTML = "<p>You can't afford this</p>"
     }
