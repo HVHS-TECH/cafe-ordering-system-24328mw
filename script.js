@@ -34,16 +34,10 @@ function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=150>";
     MENU_OUTPUT.innerHTML += "<p>"+_name+": $"+_price+"</p>";
 }
-function calculateChange(_money){
-    for (let i=0; i<cartArray.length; i++){
-        _money = _money - menuItems[cartArray[i]].price;
-    }
-    return _money;
-}
 function calculateCost(){
     let cost = 0
     for (let i=0; i<cartArray.length; i++){
-        cost = cost - menuItems[cartArray[i]].price;
+        cost = cost + menuItems[cartArray[i]].price;
     }
     return cost;
 }
@@ -133,7 +127,8 @@ function continueOrder(){
     FULL_PAGE_OUTPUT.innerHTML += "<button onclick=completeOrder()>Confirm</button>";
 }
 function completeOrder(){
-    change = calculateChange(USER.money)
+    totalCost = calculateCost()
+    change = USER.money - totalCost
     if (change<0){
         FULL_PAGE_OUTPUT.innerHTML = "<p>You can't afford this</p>"
     }
@@ -143,7 +138,7 @@ function completeOrder(){
         for (let i=0; i<cartArray.length; i++){
             FULL_PAGE_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" $"+menuItems[cartArray[i]].price+"</p>";
         }
-        totalCost = calculateCost()
+        
         FULL_PAGE_OUTPUT.innerHTML += "<h4>Total cost: "+totalCost+"</h4>"
         FULL_PAGE_OUTPUT.innerHTML += "<h4>You paid "+USER.money+"</h4>"
         FULL_PAGE_OUTPUT.innerHTML += "<h4>Change: "+change+"</h4>"
