@@ -53,12 +53,13 @@ function openOrder(){
     MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number required><input type=submit onclick=getMoneyFormInput()></form>";
     ORDER_BUTTON_OUTPUT.innerHTML += "<button onclick=placeOrder()>Place Order</button>";
 }
-//use a for loop to display full menu
+//make and call function with a for loop to display full menu
 function displayMenu(){
     for (let i=0; i<menuItems.length; i++){
         displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc);
     }
 }
+displayMenu();
 //recieve and store username information from form
 function getNameFormInput(){
     const NAME_FIELD = document.getElementById("nameField");
@@ -147,5 +148,6 @@ function completeOrder(){
     }
 }
 function goBack(){
+    displayMenu();
 
 }
