@@ -48,7 +48,15 @@ function openOrder(){
     ITEM_FORM_OUTPUT.innerHTML += "<h4>Add an item to your cart:</h4>";
     ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'><input id=evaporatedWater type=radio name=menuOption value=water><label for=water>Evaporated water</label><br><input id=deconstructedCake type=radio name=menuOption value=cake><label for=cake>Deconstruced cake</label><br><input id=agedMilkMilkshake type=radio name=menuOption value=milkshake><label for=milkshake>Aged milk milkshake</label><br><input type=submit onclick=getItemFormInput()></form>";
     CART_OUTPUT.innerHTML += "<h4>Your Cart:</h4>";
-    CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
+    if (cartArray.length<1){
+        CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
+    }
+    else{
+        for (let i=0; i<cartArray.length; i++){
+            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
+        }
+        CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
+    }
     MONEY_FORM_OUTPUT.innerHTML += "<h4>Enter your money:</h4>";
     MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number required><input type=submit onclick=getMoneyFormInput()></form>";
     ORDER_BUTTON_OUTPUT.innerHTML += "<button onclick=placeOrder()>Place Order</button>";
@@ -81,15 +89,7 @@ function getItemFormInput(){
     }
     //display updated cart
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
-    if (cartArray.length<1){
-        CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
-    }
-    else{
-        for (let i=0; i<cartArray.length; i++){
-            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
-        }
-        CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
-    }
+    
 }
 //recieve and store user money information
 function getMoneyFormInput(){
