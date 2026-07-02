@@ -54,10 +54,11 @@ function openOrder(){
     ORDER_BUTTON_OUTPUT.innerHTML += "<button onclick=placeOrder()>Place Order</button>";
 }
 //use a for loop to display full menu
-for (let i=0; i<menuItems.length; i++){
-    displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc);
+function displayMenu(){
+    for (let i=0; i<menuItems.length; i++){
+        displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc);
+    }
 }
-
 //recieve and store username information from form
 function getNameFormInput(){
     const NAME_FIELD = document.getElementById("nameField");
@@ -117,6 +118,7 @@ function placeOrder(){
         FULL_PAGE_OUTPUT.innerHTML = "<p>Your name is "+USER.name+"</p>";
         FULL_PAGE_OUTPUT.innerHTML += "<p>You have $"+USER.money+" to pay with</p>";
         FULL_PAGE_OUTPUT.innerHTML += "<button onclick=continueOrder()>Confirm</button>";
+        FULL_PAGE_OUTPUT.innerHTML += "<button onclick=goBack()>Go back<button>"
     }
 }
 function continueOrder(){
@@ -143,4 +145,7 @@ function completeOrder(){
         FULL_PAGE_OUTPUT.innerHTML += "<h4>You paid "+USER.money+"</h4>"
         FULL_PAGE_OUTPUT.innerHTML += "<h4>Change: "+change+"</h4>"
     }
+}
+function goBack(){
+
 }
