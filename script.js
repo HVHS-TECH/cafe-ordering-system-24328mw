@@ -136,6 +136,7 @@ function continueOrder(){
         FULL_PAGE_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" $"+menuItems[cartArray[i]].price+"</p>";
     }
     FULL_PAGE_OUTPUT.innerHTML += "<button onclick=completeOrder()>Confirm</button>";
+    FULL_PAGE_OUTPUT.innerHTML += "<button onclick=goBack()>Go back</button>";
 }
 function completeOrder(){
     totalCost = calculateCost()
@@ -156,5 +157,5 @@ function completeOrder(){
     }
 }
 function goBack(){
-    
+    window.location.reload()
 }
