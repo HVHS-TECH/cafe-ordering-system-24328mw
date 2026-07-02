@@ -88,7 +88,15 @@ function getItemFormInput(){
         console.log("no item selected");
     }
     //display updated cart
-    openOrder()
+    if (cartArray.length<1){
+        CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
+    }
+    else{
+        for (let i=0; i<cartArray.length; i++){
+            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
+        }
+        CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
+    }
     
 }
 //recieve and store user money information
