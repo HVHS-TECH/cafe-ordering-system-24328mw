@@ -156,6 +156,5 @@ function completeOrder(){
     }
 }
 function goBack(){
-    displayMenu();
-
+    
 }
