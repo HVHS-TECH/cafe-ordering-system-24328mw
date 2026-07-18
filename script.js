@@ -143,6 +143,7 @@ function completeOrder(){
     change = USER.money - totalCost
     if (change<0){
         FULL_PAGE_OUTPUT.innerHTML = "<p>You can't afford this</p>"
+        FULL_PAGE_OUTPUT.innerHTML += "<button onclick=goBack()>Go back</button>"
     }
     else{
         FULL_PAGE_OUTPUT.innerHTML = "<h4>Name: "+USER.name+"</h4>"
