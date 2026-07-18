@@ -81,9 +81,11 @@ function getItemFormInput(){
     }
     //display updated cart
     if (cartArray.length<1){
+        CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
         CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     }
     else{
+        CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
         for (let i=0; i<cartArray.length; i++){
             CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
         }
