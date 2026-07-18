@@ -119,9 +119,7 @@ function placeOrder(){
     }
     else if (confirm("Please confirm your name is "+USER.name) == true){
         if (confirm("Please confirm you have $"+USER.money+" to pay with") == true){
-            let fullOrder = menuItems[cartArray].name;
-            ORDER_BUTTON_OUTPUT.innerHTML = "<p>"+fullOrder+"</p>"
-            if (confirm("Please confirm your order is "+USER.name) == true){
+            if (confirm("Please confirm your order is: ") == true){
                 completeOrder()
             }
         }
