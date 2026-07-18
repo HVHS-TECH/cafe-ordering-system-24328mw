@@ -124,8 +124,8 @@ function placeOrder(){
         ORDER_BUTTON_OUTPUT.innerHTML += "<p>Add an item to you cart</p>";
     }
     else if (confirm("Please confirm your name is "+USER.name) == true){
-        if (confirm("Please confirm your name is "+USER.name) == true){
-            
+        if (confirm("Please confirm you have "+USER.money+" to pay with") == true){
+
         }
     }
 }
