@@ -119,7 +119,9 @@ function placeOrder(){
     }
     else if (confirm("Please confirm your name is "+USER.name) == true){
         if (confirm("Please confirm you have $"+USER.money+" to pay with") == true){
+            if (confirm("Please confirm your order is ") == true){
 
+            }
         }
     }
 }
