@@ -111,6 +111,9 @@ function clearCart(){
     cartArray = [];
 }
 function placeOrder(){
+    if (confirm())
+}
+function placeOrder1(){
     const NAME_FORM = document.getElementById("nameForm");
     const MONEY_FORM = document.getElementById("moneyForm");
     if (!NAME_FORM.checkValidity()){
