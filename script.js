@@ -111,7 +111,21 @@ function clearCart(){
     cartArray = [];
 }
 function placeOrder(){
-    if (confirm())
+    const NAME_FORM = document.getElementById("nameForm");
+    const MONEY_FORM = document.getElementById("moneyForm");
+    if (!NAME_FORM.checkValidity()){
+        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Please enter a name</p>";
+    }
+    
+    else if (!MONEY_FORM.checkValidity()){
+        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Please enter your money</p>";
+    }
+    else if (cartArray.length == 0){
+        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Add an item to you cart</p>";
+    }
+    else if (confirm("Please confirm your name is "+USER.name) == true){
+        
+    }
 }
 function placeOrder1(){
     const NAME_FORM = document.getElementById("nameForm");
