@@ -109,16 +109,16 @@ function placeOrder(){
     const NAME_FORM = document.getElementById("nameForm");
     const MONEY_FORM = document.getElementById("moneyForm");
     if (!NAME_FORM.checkValidity()){
-        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Please enter a name</p>";
+        alert("Please enter a name");
     }
     
     else if (!MONEY_FORM.checkValidity()){
-        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Please enter your money</p>";
+        alert("Please enter your money");
     }
     else if (cartArray.length == 0){
-        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Add an item to you cart</p>";
+        alert("Add an item to you cart");
     }
-    else if (confirm("Please confirm your name is "+USER.name) == true){
+    else if (confirm("Please confirm your name is "+USER.name)){
         if (confirm("Please confirm you have $"+USER.money+" to pay with") == true){
             
         }
