@@ -76,17 +76,9 @@ function getNameFormInput(){
 }
 //recieve item choice information
 function getItemFormInput(){
-    if (document.getElementById("evaporatedWater").checked){
-        cartArray.push(0);
-    }
-    else if (document.getElementById("deconstructedCake").checked){
-        cartArray.push(1);
-    }
-    else if (document.getElementById("agedMilkMilkshake").checked){
-        cartArray.push(2);
-    }
-    else{
-        console.log("no item selected");
+    for (let i=0; i<menuItems.length; i++){
+        if (document.getElementById(menuItems[i].idName).checked){
+        cartArray.push(i);
     }
     //display updated cart
     if (cartArray.length<1){
