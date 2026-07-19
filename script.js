@@ -52,7 +52,7 @@ function openOrder(){
     ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'></form>";
     ITEM_FORM_FIELDS = document.getElementById("itemForm");
     for (let i=0; i<menuItems.length; i++){
-        ITEM_FORM_FIELDS.innerHTML += "<input id=i type=radio name=menuOption value=menuItems[i].idName>"
+        ITEM_FORM_FIELDS.innerHTML += "<input id='i' type=radio name=menuOption value=menuItems[i].idName>"
         ITEM_FORM_FIELDS.innerHTML += "<label for=menuItems[i].idName>"+menuItems[i].name+"</label><br>"
     }
     ITEM_FORM_FIELDS.innerHTML += "<input type=submit onclick=getItemFormInput()>"
@@ -77,7 +77,7 @@ function getNameFormInput(){
 //recieve item choice information
 function getItemFormInput(){
     for (let i=0; i<menuItems.length; i++){
-        if (document.getElementById("i").checked){
+        if (document.getElementById(i).checked){
         cartArray.push(i);
     }}
     //display updated cart
@@ -98,7 +98,6 @@ function getItemFormInput(){
 function getMoneyFormInput(){
     const MONEY_FIELD = document.getElementById("moneyField");
     USER.money = MONEY_FIELD.value;
-    console.log(USER.money);
 }
 function clearCart(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
