@@ -77,7 +77,7 @@ function getNameFormInput(){
 //recieve item choice information
 function getItemFormInput(){
     for (let i=0; i<menuItems.length; i++){
-        if (document.getElementById(menuItems[i].idName).checked){
+        if (document.getElementById("menuItems[i].idName").checked){
         cartArray.push(i);
     }}
     //display updated cart
