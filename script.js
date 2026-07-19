@@ -119,12 +119,15 @@ function placeOrder(){
         alert("Add an item to you cart");
     }
     else if (confirm("Please confirm your name is "+USER.name)){
-        if (confirm("Please confirm you have $"+USER.money+" to pay with") == true){
+        if (confirm("Please confirm you have $"+USER.money+" to pay with")){
             let order = []
             for (let i=0; i<cartArray.length; i++){
                 order.push(menuItems[cartArray[i]].name)
             }
             ORDER_BUTTON_OUTPUT.innerHTML = "<p>"+order.join(", ")+"</p>"
+            if (confirm("Please confirm your order is: "+order.join(", "))){
+                completeOrder()
+            }
         }
     }
 }
