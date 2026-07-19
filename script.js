@@ -124,7 +124,7 @@ function placeOrder(){
             for (let i=0; i<cartArray.length; i++){
                 order.push(menuItems[cartArray[i]].name)
             }
-            ORDER_BUTTON_OUTPUT.innerHTML = "<p>"+order+"</p>"
+            ORDER_BUTTON_OUTPUT.innerHTML = "<p>"+order.join(", ")+"</p>"
         }
     }
 }
