@@ -53,8 +53,9 @@ function openOrder(){
     ITEM_FORM_FIELDS = document.getElementById("itemForm");
     for (let i=0; i<menuItems.length; i++){
         ITEM_FORM_FIELDS.innerHTML += "<input id=menuItems[i].idName type=radio name=menuOption value=menuItems[i].idName>"
-        ITEM_FORM_FIELDS.innerHTML += "<label for=menuItems[i].idName>menuItems[i].name</label><br>"
+        ITEM_FORM_FIELDS.innerHTML += "<label for=menuItems[i].idName>"+menuItems[i].name+"</label><br>"
     }
+    ITEM_FORM_FIELDS.innerHTML += "<input type=submit onclick=getItemFormInput>"
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     MONEY_FORM_OUTPUT.innerHTML = "<h4>Enter your money:</h4>";
