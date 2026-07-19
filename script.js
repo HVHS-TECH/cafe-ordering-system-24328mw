@@ -49,10 +49,11 @@ function openOrder(){
     NAME_FORM_OUTPUT.innerHTML = "<h4>Name:</h4>";
     NAME_FORM_OUTPUT.innerHTML += "<form id=nameForm onsubmit='return false'><input id=nameField type=text required><input type=submit onclick=getNameFormInput()></form>";
     ITEM_FORM_OUTPUT.innerHTML = "<h4>Add an item to your cart:</h4>";
-    ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'><label for=water>Evaporated water</label><br><input id=deconstructedCake type=radio name=menuOption value=cake><label for=cake>Deconstruced cake</label><br><input id=agedMilkMilkshake type=radio name=menuOption value=milkshake><label for=milkshake>Aged milk milkshake</label><br><input type=submit onclick=getItemFormInput()></form>";
+    ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'></form>";
     ITEM_FORM_FIELDS = document.getElementById("itemForm");
     for (let i=0; i<menuItems.length; i++){
         ITEM_FORM_FIELDS.innerHTML += "<input id=menuItems[i].idName type=radio name=menuOption value=menuItems[i].idName>"
+        ITEM_FORM_FIELDS.innerHTML += "<label for=menuItems[i].idName>menuItems[i].name</label><br>"
     }
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
