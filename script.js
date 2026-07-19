@@ -52,7 +52,8 @@ function openOrder(){
     ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'></form>";
     ITEM_FORM_FIELDS = document.getElementById("itemForm");
     for (let i=0; i<menuItems.length; i++){
-        ITEM_FORM_FIELDS.innerHTML += "<input id='i' type=radio name=menuOption value=menuItems[i].idName>"
+        ITEM_FORM_FIELDS.innerHTML += "<input id=filler type=radio name=menuOption value=menuItems[i].idName>"
+        
         ITEM_FORM_FIELDS.innerHTML += "<label for=menuItems[i].idName>"+menuItems[i].name+"</label><br>"
     }
     ITEM_FORM_FIELDS.innerHTML += "<input type=submit onclick=getItemFormInput()>"
