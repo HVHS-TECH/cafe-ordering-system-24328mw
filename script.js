@@ -120,7 +120,11 @@ function placeOrder(){
     }
     else if (confirm("Please confirm your name is "+USER.name)){
         if (confirm("Please confirm you have $"+USER.money+" to pay with") == true){
-            
+            let order = []
+            for (let i=0; i<cartArray.length; i++){
+                order.push(menuItems[cartArray[i]].name)
+            }
+            ORDER_BUTTON_OUTPUT.innerHTML = "<p>"+order+"</p>"
         }
     }
 }
