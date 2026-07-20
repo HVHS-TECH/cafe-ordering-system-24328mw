@@ -43,7 +43,7 @@ function calculateCost(){
     }
     return cost;
 }
-function validateForm(_form, _field) {
+function checkValidity(_form, _field) {
   let x = document.forms["_form"]["_field"].value;
   if (x == "") {
     return false;
