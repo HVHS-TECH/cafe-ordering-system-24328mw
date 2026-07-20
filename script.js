@@ -43,6 +43,12 @@ function calculateCost(){
     }
     return cost;
 }
+function validateForm(_form, _field) {
+  let x = document.forms["_form"]["_field"].value;
+  if (x == "") {
+    return false;
+  }
+}
 //function to open the order form
 function openOrder(){
     NAME_FORM_OUTPUT.innerHTML = "<h4>Name:</h4>";
