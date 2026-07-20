@@ -110,13 +110,11 @@ function clearCart(){
     cartArray = [];
 }
 function placeOrder(){
-    const NAME_FORM = document.getElementById("nameForm");
-    const MONEY_FORM = document.getElementById("moneyForm");
-    if (!NAME_FORM.checkValidity()){
+    if (checkValidity("nameForm", "nameField")){
         alert("Please enter a name");
     }
     
-    else if (!MONEY_FORM.checkValidity()){
+    else if (checkValidity("nameForm", "nameField")){
         alert("Please enter your money");
     }
     else if (cartArray.length == 0){
