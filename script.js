@@ -43,12 +43,6 @@ function calculateCost(){
     }
     return cost;
 }
-function checkValidity(_form, _field) {
-  let x = document.forms["_form"]["_field"].value;
-  if (x == "") {
-    return false;
-  }
-}
 //function to open the order form
 function openOrder(){
     NAME_FORM_OUTPUT.innerHTML = "<h4>Name:</h4>";
@@ -110,11 +104,13 @@ function clearCart(){
     cartArray = [];
 }
 function placeOrder(){
-    if (checkValidity("nameForm", "nameField")){
+    const NAME_FORM = document.getElementById("nameForm");
+    const MONEY_FORM = document.getElementById("moneyForm");
+    if (!NAME_FORM.checkValidity()){
         alert("Please enter a name");
     }
     
-    else if (checkValidity("nameForm", "nameField")){
+    else if (!MONEY_FORM.checkValidity()){
         alert("Please enter your money");
     }
     else if (cartArray.length == 0){
