@@ -104,8 +104,8 @@ function clearCart(){
     cartArray = [];
 }
 function placeOrder(){
-    const NAME_FORM = document.getElementById("nameForm");
-    const MONEY_FORM = document.getElementById("moneyForm");
+    const NAME_FORM = document.getElementById("nameField");
+    const MONEY_FORM = document.getElementById("moneyField");
     if (!NAME_FORM.checkValidity()){
         alert("Please enter a name");
     }
