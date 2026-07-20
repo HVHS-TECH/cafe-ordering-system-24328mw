@@ -1,12 +1,12 @@
 console.log("Hello world!");
 //link to the HTML page for the outputs
-const MENU_OUTPUT = document.getElementById("menuOutput");
-const NAME_FORM_OUTPUT = document.getElementById("nameFormOutput");
-const ITEM_FORM_OUTPUT = document.getElementById("itemFormOutput");
-const CART_OUTPUT = document.getElementById("cartOutput");
-const ORDER_BUTTON_OUTPUT = document.getElementById("orderButtonOutput");
-const MONEY_FORM_OUTPUT = document.getElementById("moneyFormOutput");
-const FULL_PAGE_OUTPUT = document.getElementById("fullPageOutput");
+const MENU_OUTPUT = document.getElementById("menu");
+const NAME_FORM_OUTPUT = document.getElementById("nameForm");
+const ITEM_FORM_OUTPUT = document.getElementById("itemForm");
+const CART_OUTPUT = document.getElementById("cart");
+const ORDER_BUTTON_OUTPUT = document.getElementById("orderButton");
+const MONEY_FORM_OUTPUT = document.getElementById("moneyForm");
+const FULL_PAGE_OUTPUT = document.getElementById("fullPage");
 //store menu items in an object
 const menuItems = [
     {
@@ -21,9 +21,9 @@ const menuItems = [
         idName: "deconstructedCake"
     },
     {
-        name: "aged milk milkshake",
+        name: "aged milkshake",
         price: 27,
-        idName: "agedMilkMilkshake"
+        idName: "agedMilkshake"
     }
 ]
 //make an object to hold user information
@@ -34,8 +34,7 @@ let change;
 let totalCost;
 //use a function to display the menu items
 function displayMenuItem(_name, _price, _imageSrc){
-    MENU_OUTPUT.innerHTML += "<img src="+_imageSrc+" alt="+_name+" width=150>";
-    MENU_OUTPUT.innerHTML += "<p>"+_name+": $"+_price+"</p>";
+    MENU_OUTPUT.innerHTML += "<div><img src="+_imageSrc+" alt="+_name+" width=150><p>"+_name+": $"+_price+"</p></div>";
 }
 function calculateCost(){
     let cost = 0
@@ -131,34 +130,6 @@ function placeOrder(){
         }
     }
 }
-function placeOrder1(){
-    const NAME_FORM = document.getElementById("nameForm");
-    const MONEY_FORM = document.getElementById("moneyForm");
-    if (!NAME_FORM.checkValidity()){
-        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Please enter a name</p>";
-    }
-    
-    else if (!MONEY_FORM.checkValidity()){
-        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Please enter your money</p>";
-    }
-    else if (cartArray.length == 0){
-        ORDER_BUTTON_OUTPUT.innerHTML += "<p>Add an item to you cart</p>";
-    }
-    else{
-        FULL_PAGE_OUTPUT.innerHTML = "<p>Your name is "+USER.name+"</p>";
-        FULL_PAGE_OUTPUT.innerHTML += "<p>You have $"+USER.money+" to pay with</p>";
-        FULL_PAGE_OUTPUT.innerHTML += "<button onclick=continueOrder()>Confirm</button>";
-        FULL_PAGE_OUTPUT.innerHTML += "<button onclick=goBack()>Go back</button>"
-    }
-}
-function continueOrder(){
-    FULL_PAGE_OUTPUT.innerHTML = "<h4>Your order:</h4>";
-    for (let i=0; i<cartArray.length; i++){
-        FULL_PAGE_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" $"+menuItems[cartArray[i]].price+"</p>";
-    }
-    FULL_PAGE_OUTPUT.innerHTML += "<button onclick=completeOrder()>Confirm</button>";
-    FULL_PAGE_OUTPUT.innerHTML += "<button onclick=goBack()>Go back</button>";
-}
 function completeOrder(){
     totalCost = calculateCost()
     change = USER.money - totalCost
@@ -173,9 +144,9 @@ function completeOrder(){
             FULL_PAGE_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" $"+menuItems[cartArray[i]].price+"</p>";
         }
         
-        FULL_PAGE_OUTPUT.innerHTML += "<h4>Total cost: "+totalCost+"</h4>"
-        FULL_PAGE_OUTPUT.innerHTML += "<h4>You paid "+USER.money+"</h4>"
-        FULL_PAGE_OUTPUT.innerHTML += "<h4>Change: "+change+"</h4>"
+        FULL_PAGE_OUTPUT.innerHTML += "<h4>Total cost: $"+totalCost+"</h4>"
+        FULL_PAGE_OUTPUT.innerHTML += "<h4>You paid: $ "+USER.money+"</h4>"
+        FULL_PAGE_OUTPUT.innerHTML += "<h4>Change: $"+change+"</h4>"
     }
 }
 function goBack(){
