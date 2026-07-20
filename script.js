@@ -1,4 +1,4 @@
-console.log("Hello world!");
+
 //link to the HTML page for the outputs
 const MENU_OUTPUT = document.getElementById("menu");
 const NAME_FORM_OUTPUT = document.getElementById("nameForm");
@@ -51,9 +51,8 @@ function openOrder(){
     ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'></form>";
     ITEM_FORM_FIELDS = document.getElementById("itemForm");
     for (let i=0; i<menuItems.length; i++){
-        ITEM_FORM_FIELDS.innerHTML += "<input id=tempId type=radio name=menuOption>"
-        ITEM_FORM_FIELDS.innerHTML += "<label for=tempId>"+menuItems[i].name+"</label><br>"
-        document.getElementById("tempId").id = menuItems[i].name
+        ITEM_FORM_FIELDS.innerHTML += "<input id="+menuItems[i].name+" type=radio name=menuOption>"
+        ITEM_FORM_FIELDS.innerHTML += "<label for="+menuItems[i].name+">"+menuItems[i].name+"</label><br>"
     }
     ITEM_FORM_FIELDS.innerHTML += "<input type=submit onclick=getItemFormInput()>"
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
