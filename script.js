@@ -32,6 +32,8 @@ const USER = {};
 let cartArray = [];
 let change;
 let totalCost;
+let nameFormFilled = false;
+let moneyFormFilled = false;
 //use a function to display the menu items
 function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<div><img src="+_imageSrc+" alt="+_name+" width=150><p>"+_name+": $"+_price+"</p></div>";
@@ -73,6 +75,7 @@ displayMenu();
 function getNameFormInput(){
     const NAME_FIELD = document.getElementById("nameField");
     USER.name = NAME_FIELD.value;
+    nameFormFilled = true;
 }
 //recieve item choice information
 function getItemFormInput(){
@@ -98,6 +101,7 @@ function getItemFormInput(){
 function getMoneyFormInput(){
     const MONEY_FIELD = document.getElementById("moneyField");
     USER.money = MONEY_FIELD.value;
+    moneyFormFilled = false;
 }
 function clearCart(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
