@@ -5,4 +5,6 @@
 #orderForm{
     display: grid;
     grid-template-columns: auto auto auto auto;
+    background-color: lightgray;
+    padding: 10px;
 }
