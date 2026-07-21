@@ -71,37 +71,21 @@ function displayMenu(){
 displayMenu();
 //recieve and store username information from form
 function getNameFormInput(){
-    
     const NAME_FIELD = document.getElementById("nameField");
-    
     USER.name = NAME_FIELD.value;
-    
 }
-
 //recieve item choice information
-
 function getItemFormInput(){
-    
     for (let i=0; i<menuItems.length; i++){
-        
         if (document.getElementById(menuItems[i].name).checked){
-            
         cartArray.push(i);
-        
     }}
-    
     //display updated cart
-    
     if (cartArray.length<1){
-        
         CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
-        
         CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
-        
     }
-    
     else{
-        
         CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
         for (let i=0; i<cartArray.length; i++){
             CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
