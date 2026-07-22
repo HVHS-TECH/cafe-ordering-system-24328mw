@@ -141,6 +141,7 @@ function completeOrder(){
         FULL_PAGE_OUTPUT.innerHTML += "<h4>Total cost: $"+totalCost+"</h4>"
         FULL_PAGE_OUTPUT.innerHTML += "<h4>You paid: $ "+USER.money+"</h4>"
         FULL_PAGE_OUTPUT.innerHTML += "<h4>Change: $"+change+"</h4>"
+        FULL_PAGE_OUTPUT.innerHTML += "<button onclick=goBack()>New order</button>"
     }
 }
 function goBack(){
