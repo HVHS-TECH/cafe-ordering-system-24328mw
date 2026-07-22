@@ -61,7 +61,7 @@ function openOrder(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     MONEY_FORM_OUTPUT.innerHTML = "<h4>Enter your money:</h4>";
-    MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number required><input type=submit onclick=getMoneyFormInput()></form>";
+    MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number min=0 required><input type=submit onclick=getMoneyFormInput()></form>";
     ORDER_BUTTON_OUTPUT.innerHTML = "<button onclick=placeOrder()>Place Order</button>";
 }
 //make and call function with a for loop to display full menu
@@ -101,7 +101,7 @@ function getItemFormInput(){
 function getMoneyFormInput(){
     const MONEY_FIELD = document.getElementById("moneyField");
     USER.money = MONEY_FIELD.value;
-    moneyFormFilled = false;
+    moneyFormFilled = true;
 }
 function clearCart(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
