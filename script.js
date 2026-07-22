@@ -107,7 +107,7 @@ function placeOrder(){
     }
     
     else if (!MONEY_FORM.checkValidity()){
-        alert("Please enter your money");
+        alert("Please enter your money correctly");
     }
     else if (cartArray.length == 0){
         alert("Add an item to you cart");
