@@ -115,7 +115,7 @@ function placeOrder(){
         alert("Please enter a name");
     }
     
-    else if (!MONEY_FORM.checkValidity()||!nameFormFilled){
+    else if (!MONEY_FORM.checkValidity()||!moneyFormFilled){
         alert("Please enter your money");
     }
     else if (cartArray.length == 0){
