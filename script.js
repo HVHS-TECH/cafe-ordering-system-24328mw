@@ -32,8 +32,6 @@ const USER = {};
 let cartArray = [];
 let change;
 let totalCost;
-let nameFormFilled = false;
-let moneyFormFilled = false;
 //use a function to display the menu items
 function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<div><img src="+_imageSrc+" alt="+_name+" width=150><p>"+_name+": $"+_price+"</p></div>";
@@ -48,7 +46,7 @@ function calculateCost(){
 //function to open the order form
 function openOrder(){
     NAME_FORM_OUTPUT.innerHTML = "<h4>Name:</h4>";
-    NAME_FORM_OUTPUT.innerHTML += "<form id=nameForm onsubmit='return false'><input id=nameField type=text required><input type=submit onclick=getNameFormInput()></form>";
+    NAME_FORM_OUTPUT.innerHTML += "<form id=nameForm onsubmit='return false'><input id=nameField type=text required></form>";
     ITEM_FORM_OUTPUT.innerHTML = "<h4>Add an item to your cart:</h4>";
     ITEM_FORM_OUTPUT.innerHTML += "<form id=itemForm onsubmit='return false'></form>";
     ITEM_FORM_FIELDS = document.getElementById("itemForm");
@@ -61,7 +59,7 @@ function openOrder(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     MONEY_FORM_OUTPUT.innerHTML = "<h4>Enter your money:</h4>";
-    MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number min=0 required><input type=submit onclick=getMoneyFormInput()></form>";
+    MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number min=0 required></form>";
     ORDER_BUTTON_OUTPUT.innerHTML = "<button onclick=placeOrder()>Place Order</button>";
 }
 //make and call function with a for loop to display full menu
@@ -71,12 +69,7 @@ function displayMenu(){
     }
 }
 displayMenu();
-//recieve and store username information from form
-function getNameFormInput(){
-    const NAME_FIELD = document.getElementById("nameField");
-    USER.name = NAME_FIELD.value;
-    nameFormFilled = true;
-}
+
 //recieve item choice information
 function getItemFormInput(){
     for (let i=0; i<menuItems.length; i++){
@@ -97,25 +90,23 @@ function getItemFormInput(){
     }
     
 }
-//recieve and store user money information
-function getMoneyFormInput(){
-    const MONEY_FIELD = document.getElementById("moneyField");
-    USER.money = MONEY_FIELD.value;
-    moneyFormFilled = true;
-}
 function clearCart(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     cartArray = [];
 }
 function placeOrder(){
+    const NAME_FIELD = document.getElementById("nameField");
+    USER.name = NAME_FIELD.value;
+    const MONEY_FIELD = document.getElementById("moneyField");
+    USER.money = MONEY_FIELD.value;
     const NAME_FORM = document.getElementById("nameField");
     const MONEY_FORM = document.getElementById("moneyField");
-    if (!NAME_FORM.checkValidity()||!nameFormFilled){
+    if (!NAME_FORM.checkValidity()){
         alert("Please enter a name");
     }
     
-    else if (!MONEY_FORM.checkValidity()||!moneyFormFilled){
+    else if (!MONEY_FORM.checkValidity()){
         alert("Please enter your money");
     }
     else if (cartArray.length == 0){
