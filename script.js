@@ -106,14 +106,12 @@ function placeOrder(){
     USER.name = NAME_FIELD.value;
     const MONEY_FIELD = document.getElementById("moneyField");
     USER.money = MONEY_FIELD.value;
-    const NAME_FORM = document.getElementById("nameField");
-    const MONEY_FORM = document.getElementById("moneyField");
     //validate name form
-    if (!NAME_FORM.checkValidity()){
+    if (!NAME_FIELD.checkValidity()){
         alert("Please enter a name");
     }
     //validate money form
-    else if (!MONEY_FORM.checkValidity()){
+    else if (!MONEY_FIELD.checkValidity()){
         alert("Please enter your money correctly");
     }
     //check cart has item(s)
