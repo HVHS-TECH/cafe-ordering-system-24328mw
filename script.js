@@ -63,15 +63,16 @@ function openOrder(){
     MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number min=0 required></form>";
     ORDER_BUTTON_OUTPUT.innerHTML = "<button onclick=placeOrder()>Place Order</button>";
 }
-//make and call function with a for loop to display full menu
+//function with a for loop to display full menu
 function displayMenu(){
     for (let i=0; i<menuItems.length; i++){
         displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc);
     }
 }
+//call displayMenu
 displayMenu();
 
-//recieve item choice information
+//function to recieve item choice information
 function getItemFormInput(){
     for (let i=0; i<menuItems.length; i++){
         if (document.getElementById(menuItems[i].name).checked){
@@ -92,11 +93,13 @@ function getItemFormInput(){
         CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
     }
 }
+//function to remove all items from cart and display an empty cart
 function clearCart(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     cartArray = [];
 }
+//function to complete the order and get confirmation of user details
 function placeOrder(){
     const NAME_FIELD = document.getElementById("nameField");
     USER.name = NAME_FIELD.value;
@@ -104,16 +107,19 @@ function placeOrder(){
     USER.money = MONEY_FIELD.value;
     const NAME_FORM = document.getElementById("nameField");
     const MONEY_FORM = document.getElementById("moneyField");
+    //validate name form
     if (!NAME_FORM.checkValidity()){
         alert("Please enter a name");
     }
-    
+    //validate money form
     else if (!MONEY_FORM.checkValidity()){
         alert("Please enter your money correctly");
     }
+    //check cart has item(s)
     else if (cartArray.length == 0){
         alert("Add an item to you cart");
     }
+    //offer confirmations
     else if (confirm("Please confirm your name is "+USER.name)){
         if (confirm("Please confirm you have $"+USER.money+" to pay with")){
             let order = []
@@ -126,6 +132,7 @@ function placeOrder(){
         }
     }
 }
+//function to display receipt
 function completeOrder(){
     change = USER.money - totalCost
     if (change<0){
@@ -145,6 +152,7 @@ function completeOrder(){
         FULL_PAGE_OUTPUT.innerHTML += "<button onclick=goBack()>New order</button>"
     }
 }
+//function to reset order
 function goBack(){
     window.location.reload()
 }
