@@ -85,13 +85,12 @@ function getItemFormInput(){
     else{
         CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
         for (let i=0; i<cartArray.length; i++){
-            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" "+menuItems[cartArray[i]].price+"</p>";
+            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" $"+menuItems[cartArray[i]].price+"</p>";
         }
         totalCost = calculateCost()
-        CART_OUTPUT.innerHTML +="<p>Total cost: "+totalCost+"</p>"
+        CART_OUTPUT.innerHTML +="<p>Total cost: $"+totalCost+"</p>"
         CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
     }
-    
 }
 function clearCart(){
     CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
