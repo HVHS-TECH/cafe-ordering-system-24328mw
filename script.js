@@ -57,7 +57,7 @@ function openOrder(){
         document.getElementById("tempId").id = menuItems[i].name
     }
     ITEM_FORM_FIELDS.innerHTML += "<input type=submit onclick=getItemFormInput() value=add>"
-    CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
+    CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     MONEY_FORM_OUTPUT.innerHTML = "<h4>Enter your money:</h4>";
     MONEY_FORM_OUTPUT.innerHTML += "<form id=moneyForm onsubmit='return false'><label for=moneyField>$</label><input id=moneyField type=number min=0 required></form>";
@@ -82,6 +82,7 @@ function getItemFormInput(){
     if (cartArray.length<1){
         CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
         CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
+        alert("select an item")
     }
     else{
         CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
@@ -95,7 +96,7 @@ function getItemFormInput(){
 }
 //function to remove all items from cart and display an empty cart
 function clearCart(){
-    CART_OUTPUT.innerHTML = "<h4>Your Cart:</h4>";
+    CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
     CART_OUTPUT.innerHTML += "<p>Your cart is empty</p>";
     cartArray = [];
 }
