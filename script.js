@@ -36,6 +36,7 @@ let totalCost;
 function displayMenuItem(_name, _price, _imageSrc){
     MENU_OUTPUT.innerHTML += "<div><img src="+_imageSrc+" alt="+_name+" width=150><p>"+_name+": $"+_price+"</p></div>";
 }
+//usse a function to calculate the total cost of the order
 function calculateCost(){
     let cost = 0
     for (let i=0; i<cartArray.length; i++){
@@ -84,8 +85,10 @@ function getItemFormInput(){
     else{
         CART_OUTPUT.innerHTML = "<h4>Your cart:</h4>";
         for (let i=0; i<cartArray.length; i++){
-            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+"</p>";
+            CART_OUTPUT.innerHTML += "<p>"+menuItems[cartArray[i]].name+" "+menuItems[cartArray[i]].price+"</p>";
         }
+        totalCost = calculateCost()
+        CART_OUTPUT.innerHTML +="<p>Total cost: "+totalCost+"</p>"
         CART_OUTPUT.innerHTML +="<button onclick=clearCart()>Clear Cart</button>"
     }
     
@@ -125,7 +128,6 @@ function placeOrder(){
     }
 }
 function completeOrder(){
-    totalCost = calculateCost()
     change = USER.money - totalCost
     if (change<0){
         FULL_PAGE_OUTPUT.innerHTML = "<p>You can't afford this</p>"
