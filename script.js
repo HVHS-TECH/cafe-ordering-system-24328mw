@@ -18,11 +18,13 @@ const menuItems = [
     {
         name: "deconstructed cake",
         price: 20,
+        imageSrc: "evaporatedWater.png",
         idName: "deconstructedCake"
     },
     {
         name: "aged milkshake",
         price: 27,
+        imageSrc: "evaporatedWater.png",
         idName: "agedMilkshake"
     }
 ]
@@ -66,7 +68,7 @@ function openOrder(){
 //function with a for loop to display full menu
 function displayMenu(){
     for (let i=0; i<menuItems.length; i++){
-        displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[0].imageSrc);
+        displayMenuItem(menuItems[i].name, menuItems[i].price, menuItems[i].imageSrc);
     }
 }
 //call displayMenu
